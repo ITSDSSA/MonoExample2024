@@ -71,6 +71,10 @@ namespace MoneoExample2024
                 Exit();
 
             // Look at checking mouse clicks for each item in the collection
+            
+            // Toggle first element tint Needed for Week2 lab 1
+            if (InputEngine.IsKeyPressed(Keys.T))
+                spritesCollection[0].Tint = !spritesCollection[0].Tint;
 
             //if(InputEngine.IsKeyHeld(Keys.Right)) 
             //{
@@ -81,14 +85,14 @@ namespace MoneoExample2024
             //    bodySprite.Move(new Vector2(-5, 0));
             //}
 
-            //if(InputEngine.IsMouseLeftClick() 
-            //    && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
-            //    if(clickPlayer.State != SoundState.Playing)
-            //    {
-            //        clickPlayer.Play();
-            //    }
-                    
-            // TODO: Add your update logic here
+                //if(InputEngine.IsMouseLeftClick() 
+                //    && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
+                //    if(clickPlayer.State != SoundState.Playing)
+                //    {
+                //        clickPlayer.Play();
+                //    }
+
+                // TODO: Add your update logic here
 
             base.Update(gameTime);
         }

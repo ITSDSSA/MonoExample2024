@@ -13,6 +13,8 @@ namespace Sprites
         public Vector2 Position;
         public Rectangle BoundingRect;
         public bool Visible = true;
+        public Color AlphaColor = new Color(Color.Blue, 127);
+        public bool Tint = false;
 
         public SimpleSprite(Texture2D spriteImage,
                             Vector2 startPosition)
@@ -26,8 +28,10 @@ namespace Sprites
 
         public void draw(SpriteBatch sp)
         {
-            if(Visible)
+            if(Visible && !Tint)
                 sp.Draw(Image, Position, Color.White);
+            else sp.Draw(Image, Position, AlphaColor);
+
         }
 
         public void Move(Vector2 delta)
