@@ -16,6 +16,8 @@ namespace MoneoExample2024
         private SoundEffect clickEffect;
         private SoundEffectInstance clickPlayer;
         private SimpleSprite bodySprite;
+        // Create an array of simplesprites
+        SimpleSprite[] spritesCollection = new SimpleSprite[3];
 
         public Game1()
         {
@@ -29,6 +31,11 @@ namespace MoneoExample2024
             // TODO: Add your initialization logic here
             new InputEngine(this);
             Vector2 currentMouse = InputEngine.MousePosition;
+            // Changing the width and height of the _graphics device
+            _graphics.PreferredBackBufferWidth = 1920;
+            _graphics.PreferredBackBufferHeight = 780;
+            _graphics.ApplyChanges();
+
             base.Initialize();
         }
 
@@ -38,10 +45,23 @@ namespace MoneoExample2024
             Texture2D bodytx = Content.Load<Texture2D>("body");
             openingMusicTrack = Content.Load<Song>("Opening Music Track");
             //MediaPlayer.Play(openingMusicTrack);
-            clickEffect = Content.Load<SoundEffect>("charge");
+            clickEffect = Content.Load<SoundEffect>("Collected");
              clickPlayer = clickEffect.CreateInstance();
             //clickEffect.Play();
-            bodySprite = new SimpleSprite(bodytx, new Vector2(100, 100));
+            //bodySprite = new SimpleSprite(bodytx, new Vector2(100, 100));
+            
+            // Work out the start position of the collection relative to the center of
+            // the screen and taking into account the size of the collection and the size of
+            // the images in the collection objects
+            Vector2 startPosition = GraphicsDevice.Viewport.Bounds.Center.ToVector2();
+            startPosition.X = startPosition.X - spritesCollection.Length * bodytx.Width/2;
+            // position the collection of objects
+            for (int i = 0; i < spritesCollection.Length; i++)
+            {
+                spritesCollection[i] = new SimpleSprite(bodytx, startPosition);
+                startPosition.X += bodytx.Width;
+            }
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -49,21 +69,24 @@ namespace MoneoExample2024
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            if(InputEngine.IsKeyHeld(Keys.Right)) 
-            {
-                bodySprite.Move(new Vector2(5, 0));
-            }
-            if (InputEngine.IsKeyHeld(Keys.Left))
-            {
-                bodySprite.Move(new Vector2(-5, 0));
-            }
 
-            if(InputEngine.IsMouseLeftClick() 
-                && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
-                if(clickPlayer.State != SoundState.Playing)
-                {
-                    clickPlayer.Play();
-                }
+            // Look at checking mouse clicks for each item in the collection
+
+            //if(InputEngine.IsKeyHeld(Keys.Right)) 
+            //{
+            //    bodySprite.Move(new Vector2(5, 0));
+            //}
+            //if (InputEngine.IsKeyHeld(Keys.Left))
+            //{
+            //    bodySprite.Move(new Vector2(-5, 0));
+            //}
+
+            //if(InputEngine.IsMouseLeftClick() 
+            //    && bodySprite.BoundingRect.Contains(InputEngine.MousePosition.ToPoint() ))
+            //    if(clickPlayer.State != SoundState.Playing)
+            //    {
+            //        clickPlayer.Play();
+            //    }
                     
             // TODO: Add your update logic here
 
@@ -74,7 +97,10 @@ namespace MoneoExample2024
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
-            bodySprite.draw(_spriteBatch);
+            //bodySprite.draw(_spriteBatch);
+            // Draw the collection of objects
+            foreach (var item in spritesCollection)
+                item.draw(_spriteBatch);
             _spriteBatch.End();
 
             // TODO: Add your drawing code here
