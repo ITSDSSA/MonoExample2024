@@ -15,9 +15,10 @@ namespace MoneoExample2024
         private Song openingMusicTrack;
         private SoundEffect clickEffect;
         private SoundEffectInstance clickPlayer;
+        private SpriteFont font;
         private SimpleSprite bodySprite;
         // Create an array of simplesprites
-        SimpleSprite[] spritesCollection = new SimpleSprite[3];
+        SimpleSprite[] spritesCollection = new SimpleSprite[5];
 
         public Game1()
         {
@@ -47,6 +48,7 @@ namespace MoneoExample2024
             //MediaPlayer.Play(openingMusicTrack);
             clickEffect = Content.Load<SoundEffect>("Collected");
              clickPlayer = clickEffect.CreateInstance();
+            font = Content.Load<SpriteFont>("font");
             //clickEffect.Play();
             //bodySprite = new SimpleSprite(bodytx, new Vector2(100, 100));
             
@@ -101,6 +103,7 @@ namespace MoneoExample2024
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
+            _spriteBatch.DrawString(font, "Mongame Example 2024", GraphicsDevice.Viewport.Bounds.Center.ToVector2() - new Vector2(0,20), Color.White);
             //bodySprite.draw(_spriteBatch);
             // Draw the collection of objects
             foreach (var item in spritesCollection)
