@@ -101,9 +101,10 @@ namespace MoneoExample2024
 
         protected override void Draw(GameTime gameTime)
         {
+            
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
-            _spriteBatch.DrawString(font, "Mongame Example 2024", GraphicsDevice.Viewport.Bounds.Center.ToVector2() - new Vector2(0,20), Color.White);
+            _spriteBatch.DrawString(font, "Mongame Example 2024", GraphicsDevice.Viewport.Bounds.Center.ToVector2() - font.MeasureString("Mongame Example 2024")/2, Color.White);
             //bodySprite.draw(_spriteBatch);
             // Draw the collection of objects
             foreach (var item in spritesCollection)
