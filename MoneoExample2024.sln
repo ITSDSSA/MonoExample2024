@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneoExample2024", "MoneoExample2024\MoneoExample2024.csproj", "{368FB85E-C745-434B-AC89-5F6FF5E40EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneoExample2024", "MoneoExample2024\MoneoExample2024.csproj", "{368FB85E-C745-434B-AC89-5F6FF5E40EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameComponentExample2024", "GameComponentExample2024\GameComponentExample2024.csproj", "{7AAC1B49-B07F-4CC7-8415-5DE26FD735F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{368FB85E-C745-434B-AC89-5F6FF5E40EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368FB85E-C745-434B-AC89-5F6FF5E40EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368FB85E-C745-434B-AC89-5F6FF5E40EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAC1B49-B07F-4CC7-8415-5DE26FD735F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAC1B49-B07F-4CC7-8415-5DE26FD735F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAC1B49-B07F-4CC7-8415-5DE26FD735F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAC1B49-B07F-4CC7-8415-5DE26FD735F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
