@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TiledSpriteExample.Tile">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAIAAQAAAAAgABAACAAAAAAAAABABAAAQgAYBA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiledSpriteExample.TiledPlayer">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAQAA=</HashCode>
+      <FileName>TiledPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiledSpriteExample.TiledSprite">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iASAAAAAAAAAAgAAAAgAAABgECAAJEAIAAQACIAAAIE=</HashCode>
+      <FileName>TiledSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiledSpriteExample.TileLayer">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAIBAIgAAAAAAAAAEAAAAAAoAAAAAAAAAAAA=</HashCode>
+      <FileName>TileLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiledSpriteExample.TileRef">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TileRef.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
