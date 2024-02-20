@@ -14,7 +14,7 @@ namespace Tiler
         public int tileX;
         public int tileY;
         public Texture2D texture;
-        bool visible = false;
+        bool visible = true;
         
 
         public Vector2 WorldPosition

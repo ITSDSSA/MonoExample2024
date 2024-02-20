@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace TiledSpriteExample
     public static class Helper
     {
         public static Texture2D SpriteSheet { get; set; }
+        public static GraphicsDeviceManager graphicsDeviceManager { get; set; }
     }
 }

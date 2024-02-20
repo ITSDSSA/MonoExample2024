@@ -55,7 +55,7 @@ namespace TileSheetEngineExample2023
         public Game1()
         {
             IsMouseVisible = true;
-            graphics = new GraphicsDeviceManager(this);
+            Helper.graphicsDeviceManager = graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 

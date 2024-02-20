@@ -23,6 +23,7 @@ namespace TiledSpriteExample
         }
         public override void Update(GameTime gametime)
         {
+            Vector2 previous = PixelPosition;
             if (InputEngine.IsKeyHeld(Keys.X))
                 AngleOfRotation += RotationSpeed;
             if (InputEngine.IsKeyHeld(Keys.Z))
@@ -38,6 +39,9 @@ namespace TiledSpriteExample
                     (float)Math.Sin(AngleOfRotation),
                     -(float)Math.Cos(AngleOfRotation)) * 5;
 
+            if (!Helper.graphicsDeviceManager.GraphicsDevice.Viewport.Bounds
+                .Contains(new Rectangle(PixelPosition.ToPoint(), new Point(FrameWidth, FrameHeight))))
+                pixelPosition = previous;    
             base.Update(gametime);
         }
 

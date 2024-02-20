@@ -65,5 +65,6 @@ namespace TiledSpriteExample
                 _tileHeight = value;
             }
         }
+        
     }
 }
