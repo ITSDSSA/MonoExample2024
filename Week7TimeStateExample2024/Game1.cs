@@ -79,9 +79,15 @@ namespace TimerExample
                         _timer = _timer - gameTime.ElapsedGameTime;
                         // We move the text pos by 0.01f using LERP (Linear interpolation)
                         _textPos = Vector2.Lerp(_textPos, _targetPos, 0.01f);
+                        // Alternative Movement
+                        //Vector2 Direction = (_targetPos - _textPos);
+                        //Direction.Normalize();
+                        //if (Vector2.Distance(_targetPos, _textPos) > 1)
+                        //    _textPos += Direction * 2;
+
                         // We adjust the Alpha value by 5 while we are moving
-                        if(_alpha > 0)
-                            _alpha -= 5;
+                        if (_alpha > 0)
+                            _alpha -= 2;
                         // Adjust the A for Alpha value of the current text color to the new alpha value
                         // making it more transparent
                         _color.A = _alpha;
